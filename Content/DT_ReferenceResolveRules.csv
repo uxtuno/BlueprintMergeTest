@@ -1,0 +1,4 @@
+---,PropertyPath,AssetMatchRule
+1,Members.RedMaterial,M_.*Red
+2,Members.GreenMaterial,M_.*Green
+3,Members.BlueMaterial,M_.*Blue
