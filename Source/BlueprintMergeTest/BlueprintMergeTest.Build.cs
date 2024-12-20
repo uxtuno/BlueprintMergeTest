@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class ReferenceResolver : ModuleRules
+public class BlueprintMergeTest : ModuleRules
 {
-	public ReferenceResolver(ReadOnlyTargetRules Target) : base(Target)
+	public BlueprintMergeTest(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	

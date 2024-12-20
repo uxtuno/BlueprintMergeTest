@@ -3,13 +3,13 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class ReferenceResolverEditorTarget : TargetRules
+public class BlueprintMergeTestTarget : TargetRules
 {
-	public ReferenceResolverEditorTarget( TargetInfo Target) : base(Target)
+	public BlueprintMergeTestTarget(TargetInfo Target) : base(Target)
 	{
-		Type = TargetType.Editor;
+		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_5;
-		ExtraModuleNames.Add("ReferenceResolver");
+		ExtraModuleNames.Add("BlueprintMergeTest");
 	}
 }

@@ -7,63 +7,15 @@
 #include "BlueprintMergeLibrary.generated.h"
 
 
-
-USTRUCT()
-struct REFERENCERESOLVER_API FReferenceResolveRulesRow : public FTableRowBase
-{
-	GENERATED_BODY()
-
-public:
-	// プロパティパス
-	// 例: "PropertyA.MemberA"
-	UPROPERTY(EditAnywhere)
-	FString PropertyPath;
-
-	// アセットを検索する条件
-	// 正規表現で指定する
-	UPROPERTY(EditAnywhere)
-	FString AssetMatchRule;
-};
-
-
-USTRUCT(BlueprintType)
-struct REFERENCERESOLVER_API FTestStruct
-{
-	GENERATED_BODY()
-public:
-	UPROPERTY(EditAnywhere)
-	TObjectPtr<UMaterial> RedMaterial;
-	
-	UPROPERTY(EditAnywhere)
-	TObjectPtr<UMaterial> GreenMaterial;
-
-	UPROPERTY(EditAnywhere)
-	TObjectPtr<UMaterial> BlueMaterial;
-};
-
-
-UCLASS(Blueprintable)
-class REFERENCERESOLVER_API UTestObject : public UObject
-{
-	GENERATED_BODY()
-
-public:
-	UPROPERTY(EditAnywhere)
-	FTestStruct Members;
-};
-
 /**
  * 
  */
 UCLASS()
-class REFERENCERESOLVER_API UBlueprintMergeLibrary : public UBlueprintFunctionLibrary
+class BLUEPRINTMERGETEST_API UBlueprintMergeLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable)
-	static void ResolveReference(UObject* WorldContextObject, UObject* Target, class UDataTable* RulesDataTable, const FString& AssetDirectoryPath);
-
 	// ブループリントをマージする
 	UFUNCTION(BlueprintCallable)
 	static void MergeBlueprint(UObject* WorldContextObject, UBlueprint* Base, UBlueprint* Left, UBlueprint* Right, const FString& OutputName);
